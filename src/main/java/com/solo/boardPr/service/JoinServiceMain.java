@@ -1,6 +1,10 @@
 package com.solo.boardPr.service;
 
-public abstract class JoinServiceMain implements JoinService {
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class JoinServiceMain implements JoinService {
 
     @Override
     public void join(){

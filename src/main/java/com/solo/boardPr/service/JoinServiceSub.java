@@ -1,9 +1,9 @@
 package com.solo.boardPr.service;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-@Service
-public abstract class JoinServiceSub implements JoinService {
+public class JoinServiceSub implements JoinService {
 
     @Override
     public void join(){

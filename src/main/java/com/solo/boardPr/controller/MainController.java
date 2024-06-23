@@ -1,6 +1,8 @@
 package com.solo.boardPr.controller;
 
 
+import com.solo.boardPr.service.MainService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;
@@ -9,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
+@RequiredArgsConstructor
 public class MainController {
+    private final MainService mainService;
 //
 //    // @ResponseStatus 사용해보기
 //    @GetMapping("/success")
@@ -38,8 +42,9 @@ public class MainController {
 //    }
 
     @GetMapping("/hello")
-    public String hello(@RequestParam String name) {
-        return "Hello, " + name + "!";
+    public String hello() {
+
+        return mainService.joinfc();
     }
 
 }

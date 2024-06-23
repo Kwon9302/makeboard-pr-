@@ -1,11 +1,16 @@
 package com.solo.boardPr.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class MainService {
-    public static void main(String[] args) {
-        JoinService.join();
+    private final JoinService js;
 
+    public String joinfc(){
+        js.join();
+        js.Out();
+        return null;
     }
-}
+ }
