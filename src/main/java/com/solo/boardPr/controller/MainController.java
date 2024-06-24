@@ -1,6 +1,7 @@
 package com.solo.boardPr.controller;
 
 
+import com.solo.boardPr.domain.ClientEntity;
 import com.solo.boardPr.service.MainService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
@@ -44,7 +45,13 @@ public class MainController {
     @GetMapping("/hello")
     public String hello() {
 
+
         return mainService.joinfc();
     }
 
+    @PostMapping("/save")
+    public ResponseEntity<?> saveClient(@RequestBody ClientEntity clientEntity) {
+        mainService.saveClientData(clientEntity);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
